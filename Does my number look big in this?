@@ -1,0 +1,5 @@
+def narcissistic( value ):
+    num_sum = 0
+    for num in str(value):
+        num_sum += int(num)**len(str(value))
+    return value == num_sum
