@@ -1,0 +1,19 @@
+def valid_solution(board):
+    x = 0
+    y = 0
+    for horizontal in range(len(board)):
+        for vertical in range(len(board)):
+            y += board[horizontal][vertical]
+            x += board[vertical][horizontal]
+        if x != y:
+            return False
+    
+    for horizontal in range(3):
+        for vertical in range(3):
+            sum = 0
+            for hor_add in range(3):
+                for ver_add in range(3):
+                    sum += board[3*horizontal+hor_add][3*vertical+ver_add]
+            if sum != 45:
+                return False
+    return True
