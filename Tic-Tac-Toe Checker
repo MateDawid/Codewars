@@ -1,0 +1,21 @@
+def is_solved(board):
+    solution = 0
+    array = board[0] + board[1] + board[2]
+    if 0 in array:
+        solution = -1
+    if array[0] == array[4] == array[8] != 0:
+        solution = array[0]
+    if array[2] == array[4] == array[6] != 0:
+        solution = array[2]
+    if array[0] == array[1] == array[2] != 0:
+        solution = array[0]
+    if array[3] == array[4] == array[5] != 0:
+        solution = array[3]
+    if array[6] == array[7] == array[8] != 0:
+        solution = array[6]
+    for i in range(3):
+        if array[i] == array[3+i] == array[6+i] != 0:
+            solution = array[i]
+    
+    return solution
+    
