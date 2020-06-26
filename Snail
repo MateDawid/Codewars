@@ -1,0 +1,19 @@
+def snail(snail_map):
+  results =[]
+  while len(snail_map) > 0:
+        # go right
+        results += snail_map[0]
+        del snail_map[0]
+        
+        # go down
+        if len(snail_map) > 0:
+            for row in snail_map:
+                results += [row[-1]]
+                del row[-1]
+            if snail_map[-1]:
+                results += snail_map[-1][::-1]
+                del snail_map[-1]
+            for row in reversed(snail_map):
+                results += [row[0]]
+                del row[0]
+  return results
